@@ -3457,178 +3457,264 @@
     <VrpRoadLocation reference="59"/>
   </locationList>
   <depotList id="61">
-    <VrpDepot id="62">
+    <VrpTimeWindowedDepot id="62">
       <id>1</id>
       <location class="VrpRoadLocation" reference="3"/>
-    </VrpDepot>
+	  <readyTime>0</readyTime>
+      <dueTime>1236000</dueTime>
+    </VrpTimeWindowedDepot>
   </depotList>
   <vehicleList id="63">
     <VrpVehicle id="64">
       <id>0</id>
-      <capacity>6</capacity>
+      <capacity>60</capacity>
       <depot reference="62"/>
     </VrpVehicle>
     <VrpVehicle id="65">
       <id>1</id>
-      <capacity>6</capacity>
+      <capacity>60</capacity>
       <depot reference="62"/>
     </VrpVehicle>
     <VrpVehicle id="66">
       <id>2</id>
-      <capacity>6</capacity>
+      <capacity>60</capacity>
       <depot reference="62"/>
     </VrpVehicle>
     <VrpVehicle id="67">
       <id>3</id>
-      <capacity>6</capacity>
+      <capacity>60</capacity>
       <depot reference="62"/>
     </VrpVehicle>
     <VrpVehicle id="68">
       <id>4</id>
-      <capacity>6</capacity>
+      <capacity>60</capacity>
       <depot reference="62"/>
     </VrpVehicle>
   </vehicleList>
   <customerList id="69">
-    <VrpCustomer id="70">
+    <VrpTimeWindowedCustomer id="70">
       <id>2</id>
       <location class="VrpRoadLocation" reference="5"/>
-      <demand>1</demand>
-    </VrpCustomer>
-    <VrpCustomer id="71">
+      <demand>20</demand>
+	  <readyTime>830000</readyTime>
+      <dueTime>967000</dueTime>
+      <serviceDuration>90000</serviceDuration>
+    </VrpTimeWindowedCustomer>
+    <VrpTimeWindowedCustomer id="71">
       <id>3</id>
       <location class="VrpRoadLocation" reference="7"/>
-      <demand>1</demand>
-    </VrpCustomer>
-    <VrpCustomer id="72">
+      <demand>10</demand>
+	  <readyTime>625000</readyTime>
+      <dueTime>670000</dueTime>
+      <serviceDuration>90000</serviceDuration>
+    </VrpTimeWindowedCustomer>
+    <!-- <VrpTimeWindowedCustomer id="72">
       <id>4</id>
       <location class="VrpRoadLocation" reference="9"/>
-      <demand>1</demand>
-    </VrpCustomer>
-    <VrpCustomer id="73">
+      <demand>10</demand>
+	  <readyTime>65000</readyTime>
+      <dueTime>146000</dueTime>
+      <serviceDuration>90000</serviceDuration>
+    </VrpTimeWindowedCustomer>
+    <VrpTimeWindowedCustomer id="73">
       <id>5</id>
       <location class="VrpRoadLocation" reference="11"/>
-      <demand>1</demand>
-    </VrpCustomer>
-    <VrpCustomer id="74">
+      <demand>10</demand>
+	  <readyTime>727000</readyTime>
+      <dueTime>782000</dueTime>
+      <serviceDuration>90000</serviceDuration>
+    </VrpTimeWindowedCustomer>
+    <VrpTimeWindowedCustomer id="74">
       <id>6</id>
       <location class="VrpRoadLocation" reference="13"/>
-      <demand>1</demand>
-    </VrpCustomer>
-    <VrpCustomer id="75">
+      <demand>10</demand>
+	  <readyTime>15000</readyTime>
+      <dueTime>67000</dueTime>
+      <serviceDuration>90000</serviceDuration>
+    </VrpTimeWindowedCustomer>
+    <VrpTimeWindowedCustomer id="75">
       <id>7</id>
       <location class="VrpRoadLocation" reference="15"/>
-      <demand>1</demand>
-    </VrpCustomer>
-    <VrpCustomer id="76">
+      <demand>10</demand>
+	  <readyTime>621000</readyTime>
+      <dueTime>702000</dueTime>
+      <serviceDuration>90000</serviceDuration>
+    </VrpTimeWindowedCustomer>
+    <VrpTimeWindowedCustomer id="76">
       <id>8</id>
       <location class="VrpRoadLocation" reference="17"/>
-      <demand>1</demand>
-    </VrpCustomer>
-    <VrpCustomer id="77">
+      <demand>10</demand>
+	  <readyTime>170000</readyTime>
+      <dueTime>225000</dueTime>
+      <serviceDuration>90000</serviceDuration>
+    </VrpTimeWindowedCustomer>
+    <VrpTimeWindowedCustomer id="77">
       <id>9</id>
       <location class="VrpRoadLocation" reference="19"/>
-      <demand>1</demand>
-    </VrpCustomer>
-    <VrpCustomer id="78">
+      <demand>10</demand>
+	  <readyTime>255000</readyTime>
+      <dueTime>324000</dueTime>
+      <serviceDuration>90000</serviceDuration>
+    </VrpTimeWindowedCustomer>
+    <VrpTimeWindowedCustomer id="78">
       <id>10</id>
       <location class="VrpRoadLocation" reference="21"/>
-      <demand>1</demand>
-    </VrpCustomer>
-    <VrpCustomer id="79">
+      <demand>10</demand>
+	  <readyTime>534000</readyTime>
+      <dueTime>605000</dueTime>
+      <serviceDuration>90000</serviceDuration>
+    </VrpTimeWindowedCustomer>
+    <VrpTimeWindowedCustomer id="79">
       <id>11</id>
       <location class="VrpRoadLocation" reference="23"/>
-      <demand>1</demand>
-    </VrpCustomer>
-    <VrpCustomer id="80">
+      <demand>10</demand>
+	  <readyTime>357000</readyTime>
+      <dueTime>410000</dueTime>
+      <serviceDuration>90000</serviceDuration>
+    </VrpTimeWindowedCustomer>
+    <VrpTimeWindowedCustomer id="80">
       <id>12</id>
       <location class="VrpRoadLocation" reference="25"/>
-      <demand>1</demand>
-    </VrpCustomer>
-    <VrpCustomer id="81">
+      <demand>10</demand>
+	  <readyTime>448000</readyTime>
+      <dueTime>505000</dueTime>
+      <serviceDuration>90000</serviceDuration>
+    </VrpTimeWindowedCustomer>
+    <VrpTimeWindowedCustomer id="81">
       <id>13</id>
       <location class="VrpRoadLocation" reference="27"/>
-      <demand>1</demand>
-    </VrpCustomer>
-    <VrpCustomer id="82">
+      <demand>10</demand>
+	  <readyTime>652000</readyTime>
+      <dueTime>721000</dueTime>
+      <serviceDuration>90000</serviceDuration>
+    </VrpTimeWindowedCustomer>
+    <VrpTimeWindowedCustomer id="82">
       <id>14</id>
       <location class="VrpRoadLocation" reference="29"/>
-      <demand>1</demand>
-    </VrpCustomer>
-    <VrpCustomer id="83">
+      <demand>10</demand>
+	  <readyTime>30000</readyTime>
+      <dueTime>92000</dueTime>
+      <serviceDuration>90000</serviceDuration>
+    </VrpTimeWindowedCustomer>
+    <VrpTimeWindowedCustomer id="83">
       <id>15</id>
       <location class="VrpRoadLocation" reference="31"/>
-      <demand>1</demand>
-    </VrpCustomer>
-    <VrpCustomer id="84">
+      <demand>10</demand>
+	  <readyTime>567000</readyTime>
+      <dueTime>620000</dueTime>
+      <serviceDuration>90000</serviceDuration>
+    </VrpTimeWindowedCustomer>
+    <VrpTimeWindowedCustomer id="84">
       <id>16</id>
       <location class="VrpRoadLocation" reference="33"/>
-      <demand>1</demand>
-    </VrpCustomer>
-    <VrpCustomer id="85">
+      <demand>10</demand>
+	  <readyTime>384000</readyTime>
+      <dueTime>429000</dueTime>
+      <serviceDuration>90000</serviceDuration>
+    </VrpTimeWindowedCustomer>
+    <VrpTimeWindowedCustomer id="85">
       <id>17</id>
       <location class="VrpRoadLocation" reference="35"/>
-      <demand>1</demand>
-    </VrpCustomer>
-    <VrpCustomer id="86">
+      <demand>10</demand>
+	  <readyTime>475000</readyTime>
+      <dueTime>528000</dueTime>
+      <serviceDuration>90000</serviceDuration>
+    </VrpTimeWindowedCustomer>
+    <VrpTimeWindowedCustomer id="86">
       <id>18</id>
       <location class="VrpRoadLocation" reference="37"/>
-      <demand>1</demand>
-    </VrpCustomer>
-    <VrpCustomer id="87">
+      <demand>10</demand>
+	  <readyTime>99000</readyTime>
+      <dueTime>148000</dueTime>
+      <serviceDuration>90000</serviceDuration>
+    </VrpTimeWindowedCustomer>
+    <VrpTimeWindowedCustomer id="87">
       <id>19</id>
       <location class="VrpRoadLocation" reference="39"/>
-      <demand>1</demand>
-    </VrpCustomer>
-    <VrpCustomer id="88">
+      <demand>10</demand>
+	  <readyTime>179000</readyTime>
+      <dueTime>254000</dueTime>
+      <serviceDuration>90000</serviceDuration>
+    </VrpTimeWindowedCustomer>
+    <VrpTimeWindowedCustomer id="88">
       <id>20</id>
       <location class="VrpRoadLocation" reference="41"/>
-      <demand>1</demand>
-    </VrpCustomer>
-    <VrpCustomer id="89">
+      <demand>10</demand>
+	  <readyTime>278000</readyTime>
+      <dueTime>345000</dueTime>
+      <serviceDuration>90000</serviceDuration>
+    </VrpTimeWindowedCustomer>
+    <VrpTimeWindowedCustomer id="89">
       <id>21</id>
       <location class="VrpRoadLocation" reference="43"/>
-      <demand>1</demand>
-    </VrpCustomer>
-    <VrpCustomer id="90">
+      <demand>10</demand>
+	  <readyTime>10000</readyTime>
+      <dueTime>73000</dueTime>
+      <serviceDuration>90000</serviceDuration>
+    </VrpTimeWindowedCustomer>
+    <VrpTimeWindowedCustomer id="90">
       <id>22</id>
       <location class="VrpRoadLocation" reference="45"/>
-      <demand>1</demand>
-    </VrpCustomer>
-    <VrpCustomer id="91">
+      <demand>10</demand>
+	  <readyTime>914000</readyTime>
+      <dueTime>965000</dueTime>
+      <serviceDuration>90000</serviceDuration>
+    </VrpTimeWindowedCustomer>
+    <VrpTimeWindowedCustomer id="91">
       <id>23</id>
       <location class="VrpRoadLocation" reference="47"/>
-      <demand>1</demand>
-    </VrpCustomer>
-    <VrpCustomer id="92">
+      <demand>10</demand>
+	  <readyTime>812000</readyTime>
+      <dueTime>883000</dueTime>
+      <serviceDuration>90000</serviceDuration>
+    </VrpTimeWindowedCustomer>
+    <VrpTimeWindowedCustomer id="92">
       <id>24</id>
       <location class="VrpRoadLocation" reference="49"/>
-      <demand>1</demand>
-    </VrpCustomer>
-    <VrpCustomer id="93">
+      <demand>10</demand>
+	  <readyTime>732000</readyTime>
+      <dueTime>777000</dueTime>
+      <serviceDuration>90000</serviceDuration>
+    </VrpTimeWindowedCustomer>
+    <VrpTimeWindowedCustomer id="93">
       <id>25</id>
       <location class="VrpRoadLocation" reference="51"/>
-      <demand>1</demand>
-    </VrpCustomer>
-    <VrpCustomer id="94">
+      <demand>10</demand>
+	  <readyTime>65000</readyTime>
+      <dueTime>144000</dueTime>
+      <serviceDuration>90000</serviceDuration>
+    </VrpTimeWindowedCustomer>
+    <VrpTimeWindowedCustomer id="94">
       <id>26</id>
       <location class="VrpRoadLocation" reference="53"/>
-      <demand>1</demand>
-    </VrpCustomer>
-    <VrpCustomer id="95">
+      <demand>10</demand>
+	  <readyTime>169000</readyTime>
+      <dueTime>224000</dueTime>
+      <serviceDuration>90000</serviceDuration>
+    </VrpTimeWindowedCustomer>
+    <VrpTimeWindowedCustomer id="95">
       <id>27</id>
       <location class="VrpRoadLocation" reference="55"/>
-      <demand>1</demand>
-    </VrpCustomer>
-    <VrpCustomer id="96">
+      <demand>10</demand>
+	  <readyTime>65000</readyTime>
+      <dueTime>144000</dueTime>
+      <serviceDuration>90000</serviceDuration>
+    </VrpTimeWindowedCustomer>
+    <VrpTimeWindowedCustomer id="96">
       <id>28</id>
       <location class="VrpRoadLocation" reference="57"/>
-      <demand>1</demand>
-    </VrpCustomer>
-    <VrpCustomer id="97">
+      <demand>10</demand>
+	  <readyTime>169000</readyTime>
+      <dueTime>224000</dueTime>
+      <serviceDuration>90000</serviceDuration>
+    </VrpTimeWindowedCustomer>
+    <VrpTimeWindowedCustomer id="97">
       <id>29</id>
       <location class="VrpRoadLocation" reference="59"/>
-      <demand>1</demand>
-    </VrpCustomer>
+      <demand>10</demand>
+	  <readyTime>534000</readyTime>
+      <dueTime>605000</dueTime>
+      <serviceDuration>90000</serviceDuration>
+    </VrpTimeWindowedCustomer> -->
   </customerList>
 </VrpVehicleRoutingSolution>

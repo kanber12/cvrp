@@ -19,36 +19,33 @@ import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
 import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
+import java.io.StringWriter;
 import java.util.ArrayList;
 import java.util.List;
 
 public class TestApp {
+    private static String xml = "<VrpVehicleRoutingSolution><id>0</id><name>bays29</name><distanceType>ROAD_DISTANCE</distanceType><distanceUnitOfMeasurement>distance</distanceUnitOfMeasurement><locationList><VrpRoadLocation id=\"1\"><id>1</id><travelDistanceMap><entry><VrpRoadLocation id=\"2\"><id>2</id><travelDistanceMap><entry><VrpRoadLocation reference=\"1\"/><double>107.0</double></entry><entry><VrpRoadLocation id=\"3\"><id>3</id><travelDistanceMap><entry><VrpRoadLocation reference=\"1\"/><double>241.0</double></entry><entry><VrpRoadLocation reference=\"2\"/><double>148.0</double></entry></travelDistanceMap></VrpRoadLocation><double>148.0</double></entry></travelDistanceMap></VrpRoadLocation><double>107.0</double></entry><entry><VrpRoadLocation reference=\"3\"/><double>241.0</double></entry></travelDistanceMap></VrpRoadLocation><VrpRoadLocation reference=\"2\"/><VrpRoadLocation reference=\"3\"/></locationList><depotList><VrpTimeWindowedDepot id=\"62\"><id>1</id><location reference=\"1\"/><readyTime>0</readyTime><dueTime>1236000</dueTime></VrpTimeWindowedDepot></depotList><vehicleList><VrpVehicle id=\"64\"><id>0</id><capacity>60</capacity><depot reference=\"62\"/></VrpVehicle><VrpVehicle id=\"65\"><id>1</id><capacity>60</capacity><depot reference=\"62\"/></VrpVehicle><VrpVehicle id=\"66\"><id>2</id><capacity>60</capacity><depot reference=\"62\"/></VrpVehicle><VrpVehicle id=\"67\"><id>3</id><capacity>60</capacity><depot reference=\"62\"/></VrpVehicle><VrpVehicle id=\"68\"><id>4</id><capacity>60</capacity><depot reference=\"62\"/></VrpVehicle></vehicleList><customerList id=\"69\"><VrpTimeWindowedCustomer id=\"70\"><id>2</id><location \t reference=\"2\"/><demand>20</demand><readyTime>830000</readyTime><dueTime>967000</dueTime><serviceDuration>90000</serviceDuration></VrpTimeWindowedCustomer><VrpTimeWindowedCustomer id=\"71\"><id>3</id><location class=\"VrpRoadLocation\" reference=\"3\"/><demand>10</demand><readyTime>625000</readyTime><dueTime>670000</dueTime><serviceDuration>90000</serviceDuration></VrpTimeWindowedCustomer></customerList></VrpVehicleRoutingSolution>";
+
+    public VehicleRoutingSolution readFromString(VehicleRoutingDao solutionDao, String xml) {
+        return solutionDao.readSolutionFromString(xml);
+    }
+
+    private VehicleRoutingSolution readFromFile(VehicleRoutingDao solutionDao, File xml) {
+        return solutionDao.readSolutionFromFile(xml);
+    }
 
 
-    public void solveFromFile(File vrpXmlInputFile) {
+    public String solve(String str) {
         SolverFactory<VehicleRoutingSolution> solverFactory = SolverFactory.createFromXmlResource("org/optaplanner/examples/vehiclerouting/solver/vehicleRoutingSolverConfig.xml");
         Solver<VehicleRoutingSolution> solver = solverFactory.buildSolver();
 
         VehicleRoutingDao solutionDao = new VehicleRoutingDao();
-        VehicleRoutingSolution solution = solutionDao.readSolution(vrpXmlInputFile);
+        VehicleRoutingSolution solution = readFromString(solutionDao, str);
 
         solver.solve(solution);
 
         VehicleRoutingSolution bestSolution = solver.getBestSolution();
-        System.out.println("Best solution: " + (bestSolution));
-        writeXml(bestSolution.getVehicleList(), "out.xml");
-
-//        for (Vehicle vehicle : bestSolution.getVehicleList()) {
-//            System.out.println(vehicle);
-//
-//            if (vehicle.getNextCustomer() != null) {
-//                getCustomers(vehicle.getNextCustomer());
-//            } else {
-//                System.out.println("No route");
-//            }
-//        }
+        return getXml(bestSolution.getVehicleList());
     }
 
     private void getCustomers(List<Customer> customers, Customer customer) {
@@ -64,10 +61,10 @@ public class TestApp {
 
     public static void main(String[] args) {
         TestApp app = new TestApp();
-        app.solveFromFile(new File("D:\\test.xml"));
+        app.solve(xml);
     }
 
-    private void writeXml(List<Vehicle> vehicleList, String name) {
+    private String getXml(List<Vehicle> vehicleList) {
         Document dom;
         DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
 
@@ -105,22 +102,23 @@ public class TestApp {
             dom.appendChild(rootEle);
 
             try {
+                StringWriter writer = new StringWriter(0);
                 Transformer tr = TransformerFactory.newInstance().newTransformer();
                 tr.setOutputProperty(OutputKeys.INDENT, "yes");
                 tr.setOutputProperty(OutputKeys.METHOD, "xml");
                 tr.setOutputProperty(OutputKeys.ENCODING, "UTF-8");
-                tr.setOutputProperty("{http://xml.apache.org/xslt}indent-amount", "4");
 
-                tr.transform(new DOMSource(dom),
-                        new StreamResult(new FileOutputStream(name)));
+                tr.transform(new DOMSource(dom), new StreamResult(writer));
+
+                return writer.toString();
 
             } catch (TransformerException te) {
                 System.out.println(te.getMessage());
-            } catch (IOException ioe) {
-                System.out.println(ioe.getMessage());
             }
         } catch (ParserConfigurationException pce) {
             System.out.println("UsersXML: Error trying to instantiate DocumentBuilder " + pce);
         }
+
+        return "";
     }
 }

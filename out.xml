@@ -1,143 +1,17 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <routing>
-    <vehicle name="Vehicle-0">
-        <customer>
-            <id>Customer-14</id>
-            <sequence>1</sequence>
-        </customer>
-        <customer>
-            <id>Customer-8</id>
-            <sequence>2</sequence>
-        </customer>
-        <customer>
-            <id>Customer-7</id>
-            <sequence>3</sequence>
-        </customer>
-        <customer>
-            <id>Customer-19</id>
-            <sequence>4</sequence>
-        </customer>
-        <customer>
-            <id>Customer-2</id>
-            <sequence>5</sequence>
-        </customer>
-        <customer>
-            <id>Customer-15</id>
-            <sequence>6</sequence>
-        </customer>
-    </vehicle>
-    <vehicle name="Vehicle-1">
-        <customer>
-            <id>Customer-33</id>
-            <sequence>1</sequence>
-        </customer>
-        <customer>
-            <id>Customer-11</id>
-            <sequence>2</sequence>
-        </customer>
-        <customer>
-            <id>Customer-18</id>
-            <sequence>3</sequence>
-        </customer>
-        <customer>
-            <id>Customer-12</id>
-            <sequence>4</sequence>
-        </customer>
-        <customer>
-            <id>Customer-30</id>
-            <sequence>5</sequence>
-        </customer>
-        <customer>
-            <id>Customer-20</id>
-            <sequence>6</sequence>
-        </customer>
-    </vehicle>
-    <vehicle name="Vehicle-2">
-        <customer>
-            <id>Customer-23</id>
-            <sequence>1</sequence>
-        </customer>
-        <customer>
-            <id>Customer-5</id>
-            <sequence>2</sequence>
-        </customer>
-        <customer>
-            <id>Customer-9</id>
-            <sequence>3</sequence>
-        </customer>
-        <customer>
-            <id>Customer-4</id>
-            <sequence>4</sequence>
-        </customer>
-        <customer>
-            <id>Customer-10</id>
-            <sequence>5</sequence>
-        </customer>
-        <customer>
-            <id>Customer-16</id>
-            <sequence>6</sequence>
-        </customer>
-        <customer>
-            <id>Customer-21</id>
-            <sequence>7</sequence>
-        </customer>
-        <customer>
-            <id>Customer-3</id>
-            <sequence>8</sequence>
-        </customer>
-        <customer>
-            <id>Customer-6</id>
-            <sequence>9</sequence>
-        </customer>
-    </vehicle>
-    <vehicle name="Vehicle-3">
-        <customer>
-            <id>Customer-29</id>
-            <sequence>1</sequence>
-        </customer>
-        <customer>
-            <id>Customer-22</id>
-            <sequence>2</sequence>
-        </customer>
-        <customer>
-            <id>Customer-13</id>
-            <sequence>3</sequence>
-        </customer>
-    </vehicle>
-    <vehicle name="Vehicle-4">
-        <customer>
-            <id>Customer-26</id>
-            <sequence>1</sequence>
-        </customer>
-        <customer>
-            <id>Customer-17</id>
-            <sequence>2</sequence>
-        </customer>
-        <customer>
-            <id>Customer-31</id>
-            <sequence>3</sequence>
-        </customer>
-        <customer>
-            <id>Customer-28</id>
-            <sequence>4</sequence>
-        </customer>
-    </vehicle>
-    <vehicle name="Vehicle-5">
-        <customer>
-            <id>Customer-32</id>
-            <sequence>1</sequence>
-        </customer>
-        <customer>
-            <id>Customer-24</id>
-            <sequence>2</sequence>
-        </customer>
-        <customer>
-            <id>Customer-25</id>
-            <sequence>3</sequence>
-        </customer>
-        <customer>
-            <id>Customer-27</id>
-            <sequence>4</sequence>
-        </customer>
-    </vehicle>
+<vehicle name="Vehicle-0">
+<customer>
+<id>TimeWindowedCustomer-3</id>
+<sequence>1</sequence>
+</customer>
+<customer>
+<id>TimeWindowedCustomer-2</id>
+<sequence>2</sequence>
+</customer>
+</vehicle>
+<vehicle name="Vehicle-1"/>
+<vehicle name="Vehicle-2"/>
+<vehicle name="Vehicle-3"/>
+<vehicle name="Vehicle-4"/>
 </routing>

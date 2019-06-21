@@ -23,10 +23,14 @@ public abstract class XStreamSolutionDao<Solution_> extends AbstractSolutionDao<
     }
 
     @Override
-    public Solution_ readSolution(File inputSolutionFile) {
+    public Solution_ readSolutionFromFile(File inputSolutionFile) {
         Solution_ solution = xStreamSolutionFileIO.read(inputSolutionFile);
         logger.info("Opened: {}", inputSolutionFile);
         return solution;
+    }
+
+    public Solution_ readSolutionFromString(String xml) {
+        return (Solution_) xStreamSolutionFileIO.getXStream().fromXML(xml);
     }
 
     @Override

@@ -16,7 +16,7 @@ public interface SolutionDao<Solution_> {
 
     String getFileExtension();
 
-    Solution_ readSolution(File inputSolutionFile);
+    Solution_ readSolutionFromFile(File inputSolutionFile);
 
     void writeSolution(Solution_ solution, File outputSolutionFile);
 
